@@ -48,7 +48,7 @@ const timetable = {
 function getCurrentLesson() {
   const now = new Date();
   const day = now.toLocaleDateString('en-SG', { weekday: 'long' });
-  const time = now.toTimeString().slice(0, 5); // HH:MM
+  const time = now.toTimeString().slice(0, 7); // HH:MM
 
   const today = timetable[day];
   if (!today) return "🎉 It's the weekend!";

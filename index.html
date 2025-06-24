@@ -2,65 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Timetable Tracker</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 50px;
-    }
-    #current-lesson {
-      font-size: 24px;
-      margin-top: 20px;
-      color: #333;
-    }
-  </style>
+  <title>106 Timetable Tracker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>📚 Timetable Tracker</h1>
-  <div id="current-lesson">Loading...</div>
-
-  <script>
-    const timetable = {
-      Monday: [
-        { start: "08:00", end: "08:50", subject: "Math" },
-        { start: "09:00", end: "09:50", subject: "English" },
-        { start: "10:00", end: "10:50", subject: "Science" },
-        { start: "11:00", end: "11:50", subject: "Break" },
-        { start: "12:00", end: "12:50", subject: "History" }
-      ],
-      Tuesday: [
-        { start: "08:00", end: "08:50", subject: "PE" },
-        { start: "09:00", end: "09:50", subject: "Chemistry" },
-        { start: "10:00", end: "10:50", subject: "Math" },
-        { start: "11:00", end: "11:50", subject: "Break" },
-        { start: "12:00", end: "12:50", subject: "English" }
-      ]
-      // Add more days if needed
-    };
-
-    function getCurrentLesson() {
-      const now = new Date();
-      const day = now.toLocaleDateString('en-US', { weekday: 'long' });
-      const time = now.toTimeString().slice(0, 5); // "HH:MM"
-
-      const todaySchedule = timetable[day];
-      if (!todaySchedule) return "No school today 📅";
-
-      for (let lesson of todaySchedule) {
-        if (time >= lesson.start && time < lesson.end) {
-          return `🕒 Now: ${lesson.subject} (${lesson.start}–${lesson.end})`;
-        }
-      }
-      return "No lesson right now 🎉";
-    }
-
-    function updateLesson() {
-      document.getElementById("current-lesson").innerText = getCurrentLesson();
-    }
-
-    updateLesson();
-    setInterval(updateLesson, 60 * 1000); // update every minute
-  </script>
+  <h1>Class 106 Timetable Tracker</h1>
+  <div id="current-lesson">Loading current lesson...</div>
+  <script src="script.js"></script>
 </body>
 </html>

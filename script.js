@@ -63,7 +63,10 @@ function getCurrentLesson() {
 
 function updateLesson() {
   document.getElementById("current-lesson").innerText = getCurrentLesson();
+  const now = new Date();
+  document.getElementById("current-time").innerText =
+    "Current time: " + now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }
 
 updateLesson();
-setInterval(updateLesson, 30 * 1000); // update every 30s
+setInterval(updateLesson, 1 * 1000); // update every 30s

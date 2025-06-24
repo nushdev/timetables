@@ -65,7 +65,7 @@ function updateLesson() {
   document.getElementById("current-lesson").innerText = getCurrentLesson();
   const now = new Date();
   document.getElementById("current-time").innerText =
-    "Current time: " + now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    "Current time: " + now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 }
 
 updateLesson();

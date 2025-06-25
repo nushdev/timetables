@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>106 Timetable Tracker</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 106 Timetable Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Class 106 Timetable Tracker</h1>
-  <div id="current-lesson">Loading current lesson...</div>
-  <div id="current-time"></div>
-  <script src="script.js"></script>
+    <div class="container">
+        <header>
+            <h1>Class 106 Timetable Tracker</h1>
+            <div id="current-time" class="current-time"></div>
+        </header>
+
+        <main>
+            <section class="current-lesson-card">
+                <h2>What's Happening Now?</h2>
+                <div id="current-lesson" class="lesson-info">Loading current lesson...</div>
+            </section>
+
+            <section class="daily-timetable-card">
+                <h2>Today's Schedule</h2>
+                <div id="daily-timetable" class="daily-schedule">
+                    <p>Loading today's timetable...</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Class 106. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

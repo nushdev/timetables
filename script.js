@@ -14,7 +14,7 @@ const timetable = {
         { start: "09:30", end: "10:30", subject: "PE - FKM/AKSY/DTYY/KLKF" },
         { start: "10:30", end: "11:00", subject: "Recess" },
         { start: "11:00", end: "12:30", subject: "CS 1 - CCES @ Com 3" },
-        { start: "12:30", end: "18:30", subject: "Lunch" } // This lunch slot looks very long. Consider if it's correct.
+        { start: "12:30", end: "18:30", subject: "Lunch" } 
     ],
     Wednesday: [
         { start: "08:00", end: "09:30", subject: "Hum 1 - HPS @ E1-08" },
@@ -89,20 +89,20 @@ function updateCurrentLessonDisplay() {
     const currentLesson = findCurrentLesson(day, currentTime);
 
     if (!timetable[day]) {
-        currentLessonEl.innerHTML = "🎉 **It's the weekend!** No schedule today.";
+        currentLessonEl.innerHTML = "🎉 It's the weekend! No schedule today.";
         return;
     }
 
     if (currentLesson) {
-        currentLessonEl.innerHTML = `🕒 **Now:** ${currentLesson.subject} (${currentLesson.start} – ${currentLesson.end})`;
+        currentLessonEl.innerHTML = `🕒 Now: ${currentLesson.subject} (${currentLesson.start} – ${currentLesson.end})`;
     } else {
         // Check if all lessons for the day have finished
         const todaySchedule = timetable[day];
         const lastLesson = todaySchedule[todaySchedule.length - 1];
         if (lastLesson && currentTime >= lastLesson.end) {
-            currentLessonEl.innerHTML = "✅ **All lessons for today are done!**";
+            currentLessonEl.innerHTML = "✅ All lessons for today are done!";
         } else {
-            currentLessonEl.innerHTML = "😌 **No lesson currently.** Enjoy the break!";
+            currentLessonEl.innerHTML = "😌 No lesson currently. Enjoy the break!";
         }
     }
 }
